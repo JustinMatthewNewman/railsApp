@@ -1,0 +1,11 @@
+<div class="container"> 
+<h5>For 1 EUR you need about ... <h5/>
+<div/>
+<div class="container">
+
+<ul class="list-group">
+  <% @response_obj["rates"].each do |rate| %>
+    <li class="list-group-item"> <%= rate[1] %> <%= rate[0] %> </li>
+  <% end %>
+</ul>
+<div/>
