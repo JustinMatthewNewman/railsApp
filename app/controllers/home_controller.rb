@@ -31,4 +31,6 @@ class HomeController < ApplicationController
 
   def about 
   end
+  def bitcoin
+  end
 end

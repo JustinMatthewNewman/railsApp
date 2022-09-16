@@ -23,8 +23,11 @@
   }
   
   table caption {
+    display: table-caption;
     font-size: 1.5em;
-    margin: .5em 0 .75em;
+    text-align: center;
+    font-family: sans-serif;
+    color: #f8f8f8;
   }
   
   table tr {

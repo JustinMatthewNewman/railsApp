@@ -1,5 +1,5 @@
-
 <table>
+<caption>Global insights in real time</caption>
   <thead>
     <tr>
       <th scope="col">Name</th>
@@ -7,17 +7,20 @@
       <th scope="col">1hr</th>
       <th scope="col">24hr</th>
       <th scope="col">30d</th>
+      <th scope="col">Graph</th>
     </tr>
   </thead>
   <tbody>
   <% begin %>
-  <% for index in (1...15)%>
+  <% for index in (1...50)%>
     <tr>
       <td data-label="Name"><img src="<%= @response_obj3[index]["url"] %>"><%= @response_obj2[index]["name"] %></td>
       <td data-label="Price USD"><%= @response_obj2[index]["price_usd"].round(2) %></td>
       <td data-label="1hr"><%= @response_obj2[index]["volume_1hrs_usd"].round(2) %></td>
       <td data-label="24hr"><%= @response_obj2[index]["volume_1day_usd"].round(2) %></td>
       <td data-label="30d"><%= @response_obj2[index]["volume_1mth_usd"].round(2) %></td>
+      <td data-label="graph"></td>
+      
     </tr>
     <% end %>
   <% rescue %>
@@ -28,14 +31,4 @@
 <p>
 MFI values above 80 are suggestive of a price reversal due to excessive buying volume, whereas a value of 20 or lower may suggest the opposite - excessive selling volume and oversold conditions.</p>
 
-<div class="container"> 
-<h5>For 1 EUR you need about ... <h5/>
-<div/>
-<div class="container">
 
-<ul class="list-group">
-  <% @response_obj["rates"].each do |rate| %>
-    <li class="list-group-item"> <%= rate[1] %> <%= rate[0] %> </li>
-  <% end %>
-</ul>
-<div/>
