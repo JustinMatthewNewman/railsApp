@@ -1,3 +1,5 @@
+<br>
+
 <table>
 <caption>Global insights in real time</caption>
   <thead>
@@ -14,7 +16,7 @@
   <% begin %>
   <% for index in (1...50)%>
     <tr>
-      <td data-label="Name"><img src="<%= @response_obj3[index]["url"] %>"><%= @response_obj2[index]["name"] %></td>
+      <td data-label="Name"><img class="icons" src="<%= @response_obj3[index]["url"] %>"><%= @response_obj2[index]["name"] %></td>
       <td data-label="Price USD"><%= @response_obj2[index]["price_usd"].round(2) %></td>
       <td data-label="1hr"><%= @response_obj2[index]["volume_1hrs_usd"].round(2) %></td>
       <td data-label="24hr"><%= @response_obj2[index]["volume_1day_usd"].round(2) %></td>

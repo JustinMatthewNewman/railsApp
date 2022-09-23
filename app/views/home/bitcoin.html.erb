@@ -1,1 +1,56 @@
-<h1>Hello</h1>
+<style>body{
+    background: white;
+    font-family: 'Roboto', sans-serif;
+  }</style>
+<div>
+<div class="hero">
+<div class="form-box">
+
+    <div class="button-box">
+        <div id="btn"></div>
+        <button type="button" class="toggle-btn" id="first-btn" onclick="signup1()">Login</button>
+        <button type="button" class="toggle-btn" id="second-b" onclick="login1()">Signup</button>
+    </div>
+
+    <div id="login" class="input-group" >
+       <input type="text" id="em2" class="input-field" placeholder="username" required>
+       <input type="password" id="pass2" class="input-field" placeholder="password" required>
+       <input type="checkbox" id="kli" class="check-box"><span>Keep me signed in</span>
+       <button class="submit-btn" style="border-radius: 30px" id="submit2">Login</button>
+       <button class="submit-btn"  style="border-radius: 30px" id="forget" onclick="">Forgot my password</button>
+    </div>
+    <div id="signup" class="input-group" >
+        <input type="text" id="fn1" class="input-field" placeholder="first name" required>
+        <input type="text" id="ln1" class="input-field" placeholder="last name" required>
+        <input type="text" id="un1" class="input-field" placeholder="username" required>
+        <input type="text" id="em1" class="input-field" placeholder="email" required>
+        <input type="password" id="pass1" class="input-field" placeholder="password" required>
+        <input type="checkbox" id="myCheck" class="check-box" required><span>I agree to the terms</span>
+        <button id="submit1"  style="border-radius: 30px" class="submit-btn">Signup</button>
+    </div>
+</div>
+</div>
+</div>
+
+<script>
+var x = document.getElementById("login");
+var y = document.getElementById("signup");
+var z = document.getElementById("btn");
+
+function login1() {
+    x.style.opacity = 0;
+    x.style.zIndex = -1;
+    y.style.zIndex = 1;
+    y.style.opacity = 1;
+    z.style.left = "110px";
+
+
+}
+function signup1() {
+    y.style.opacity = 0;
+    x.style.zIndex = 1;
+    y.style.zIndex = -1;
+    x.style.opacity = 1;
+    z.style.left = "0";
+}
+</script> 

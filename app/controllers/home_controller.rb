@@ -31,6 +31,11 @@ class HomeController < ApplicationController
 
   def about 
   end
+
   def bitcoin
   end
+
+  def signup
+  end
+  
 end

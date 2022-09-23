@@ -1,0 +1,27 @@
+<br><br>
+<div class="card text-center">
+  <div class="card-header">
+    Featured
+  </div>
+  <div class="card-body">
+    <h5 class="card-title"><%= render @coin %></h5>
+    <div>
+  <%= link_to "Edit this coin", edit_coin_path(@coin), class:"btn btn-primary" %> |
+  <%= link_to "Back to coins", coins_path, class:"btn btn-secondary" %>
+  <br><br>
+
+  <%= button_to "Delete", @coin, method: :delete, class:"btn btn-danger" %> 
+
+
+</div>
+
+  </div>
+  <div class="card-footer text-muted">
+    2 days ago
+  </div>
+</div>
+
+<p style="color: green"><%= notice %></p>
+
+
+

@@ -1,0 +1,27 @@
+<p style="color: green"><%= notice %></p>
+
+<h5 style="text-align:center">Portfolio</h5>
+
+<table class="table table-light table-hover">
+  <thead>
+  <tr>
+    <th>Asset</th>
+    <th>Options</th>
+  </tr>
+    </thead>
+
+
+<tbody>
+  <% @coins.each do |coin| %>
+    <tr>
+    <th><%= render coin %></th>
+    <th><p>
+    <%= link_to "View Asset", coin %>
+  </p></th>
+  </tr>
+    
+    
+  <% end %>
+</tbody>
+</table>
+<%= link_to "New coin", new_coin_path, class:"btn btn-secondary" %>
