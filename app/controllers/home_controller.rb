@@ -1,4 +1,5 @@
 class HomeController < ApplicationController
+
   def index
     require 'net/http'
     require 'json'
@@ -16,6 +17,54 @@ class HomeController < ApplicationController
     request2["X-CoinAPI-Key"] = '8FEEE8BE-B955-4B90-9BBA-31190CEC9875'
     response2 = http2.request(request2)
     @response_obj2 = JSON.parse(response2.body)
+    #puts @response_obj2[1]
+    
+    @name1
+    @price1
+    @hour1
+    @day1
+    @month1
+    @array = Array.new(100) 
+
+    for index in (1...100)
+      begin
+        @name1 = @response_obj2[index]["name"]
+      rescue
+        @ame1 = "Unknown"
+      end
+
+      begin
+        @price1 =  @response_obj2[index]["price_usd"]
+      rescue
+        @price1 = "Unknown"
+      end
+
+      begin
+        @hour1 = @response_obj2[index]["volume_1hrs_usd"]
+      rescue
+        @hour1 = "Unknown"
+      end
+
+      begin
+        @day1 = @response_obj2[index]["volume_1day_usd"]
+      rescue
+        @day1 = "Unknown"
+      end
+
+      begin
+        @month1 = @response_obj2[index]["volume_1mth_usd"]
+      rescue
+        @month1 = "Unknown"
+      end
+
+      
+      coinObj1 = CoinsObj.new(@name1,@price1,@hour1,@day1,@month1)
+      @array[index] = coinObj1
+      
+    end
+    #puts @array.inspect
+
+
 
     url3 = URI("https://rest.coinapi.io/v1/assets/icons/100")
     http3 = Net::HTTP.new(url3.host, url3.port)
@@ -29,6 +78,7 @@ class HomeController < ApplicationController
 
   end
 
+
   def about 
   end
 
@@ -38,4 +88,17 @@ class HomeController < ApplicationController
   def signup
   end
   
+  class CoinsObj
+
+    attr_accessor :name, :priceusd, :hour, :day, :month
+
+    def initialize(name, priceusd, hour, day, month)
+        @name = name
+        @priceusd = priceusd
+        @hour = hour
+        @day = day
+        @month = month
+    end
+  end
 end
+
